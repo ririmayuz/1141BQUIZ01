@@ -73,7 +73,7 @@ function save($array){
         $values=join("','",$array);
         $sql="insert into $this->table (`$cols`) values('$values')";
     }
-    echo $sql;
+    // echo $sql;
     return $this->pdo->exec($sql);
 }
 
