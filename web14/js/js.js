@@ -17,15 +17,17 @@ function lo(x)
 {
 	location.replace(x)
 }
-function op(x,y,url)
+function op(x,y,url)//open
 {
-	$(x).fadeIn()
-	if(y)
-	$(y).fadeIn()
-	if(y&&url)
+	$(x).fadeIn()//fadein淡入
+	if(y){//可能是T或F，只要y有非null、負數都算true
+		$(y).fadeIn()
+	}
+	//if else簡寫
+	if(y&&url)//url的對象載入後放到y
 	$(y).load(url)
 }
-function cl(x)
+function cl(x)//close
 {
 	$(x).fadeOut();
 }
