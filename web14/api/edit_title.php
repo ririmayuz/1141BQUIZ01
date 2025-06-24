@@ -17,6 +17,6 @@ foreach($_POST['id'] as $key => $id){
 }
 
 
-// to("../backend.php?do=title");
+to("../backend.php?do=title");
 
 ?>
