@@ -28,7 +28,7 @@
                             <input type="checkbox" name="del[]" value="<?= $row['id'];?>">
                         </td>
                         <td>
-                            <input type="button" value="更新圖片">
+                            <input type="button" value="更新圖片" onclick="op('#cover','#cvr','./model/update_title.php?id=<?=$row['id'];?>')">
                         </td>
                     </tr>
                             <input type="hidden" name="id[]" value="<?=$row['id'];?>">
