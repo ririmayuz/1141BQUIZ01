@@ -105,6 +105,8 @@ private function arraytosql($array){
 
 
 $Title=new DB('title');
+$Ad=new DB('ad');
+
 
 
 ?>
