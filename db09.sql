@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-06-24 10:32:35
+-- 產生時間： 2025-06-27 08:32:52
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -38,11 +38,99 @@ CREATE TABLE `ad` (
 --
 
 INSERT INTO `ad` (`id`, `text`, `sh`) VALUES
-(1, '轉知臺北教育大學與臺灣師大合辦第11屆麋研齋全國硬筆書法比賽活動', 1),
-(2, '轉知:法務部辦理「第五屆法規知識王網路闖關競賽辦法', 1),
-(3, '轉知2012年全國青年水墨創作大賽活動', 1),
-(4, '欣榮圖書館101年悅讀達人徵文比賽，歡迎全校師生踴躍投稿參加', 1),
-(6, '轉知:教育是人類升沉的樞紐-2013教師生命成長營', 1);
+(3, '轉知2012年全國青年水墨創作大賽活動', 0),
+(5, '轉知:教育是人類升沉的樞紐-2013教師生命成長營', 1),
+(6, 'dfadfasfasdfsdaf', 1),
+(7, '566756765757', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `acc` text DEFAULT NULL,
+  `pw` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `bottom`
+--
+
+CREATE TABLE `bottom` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `bottom` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `bottom`
+--
+
+INSERT INTO `bottom` (`id`, `bottom`) VALUES
+(1, '卓越科技大學校園資訊系統');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `image`
+--
+
+CREATE TABLE `image` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `img` text DEFAULT NULL,
+  `sh` int(1) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `menu`
+--
+
+CREATE TABLE `menu` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `text` text DEFAULT NULL,
+  `href` text DEFAULT NULL,
+  `main_id` int(10) UNSIGNED NOT NULL,
+  `sh` int(1) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `mvim`
+--
+
+CREATE TABLE `mvim` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `img` text DEFAULT NULL,
+  `sh` int(1) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `mvim`
+--
+
+INSERT INTO `mvim` (`id`, `img`, `sh`) VALUES
+(1, '01C01.gif', 1),
+(3, '01C05.gif', 1),
+(4, '01C04.gif', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `text` text DEFAULT NULL,
+  `sh` int(1) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -62,10 +150,28 @@ CREATE TABLE `title` (
 --
 
 INSERT INTO `title` (`id`, `text`, `img`, `sh`) VALUES
-(1, 'ASFD泰山科技大f學資訊網', '01B01.jpg', 0),
-(7, '泰山科技w大學ww資訊網', '01B04.jpg', 0),
-(8, '泰山科技大qeeee學資訊網', '01B02.jpg', 0),
-(9, '泰山科技大學資訊網d', '01B03.jpg', 0);
+(1, '22222', '01B02.jpg', 0),
+(5, 'dsfasdf', '01B03.jpg', 0),
+(7, 'abcde', '01B03.jpg', 1),
+(8, '1231231231', '01B02.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `total`
+--
+
+CREATE TABLE `total` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `total` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `total`
+--
+
+INSERT INTO `total` (`id`, `total`) VALUES
+(1, 100);
 
 --
 -- 已傾印資料表的索引
@@ -78,9 +184,51 @@ ALTER TABLE `ad`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `bottom`
+--
+ALTER TABLE `bottom`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `image`
+--
+ALTER TABLE `image`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `mvim`
+--
+ALTER TABLE `mvim`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `title`
 --
 ALTER TABLE `title`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `total`
+--
+ALTER TABLE `total`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -91,13 +239,55 @@ ALTER TABLE `title`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ad`
 --
 ALTER TABLE `ad`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `bottom`
+--
+ALTER TABLE `bottom`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `image`
+--
+ALTER TABLE `image`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `mvim`
+--
+ALTER TABLE `mvim`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `title`
 --
 ALTER TABLE `title`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `total`
+--
+ALTER TABLE `total`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
