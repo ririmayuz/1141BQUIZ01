@@ -10,18 +10,16 @@ if(!empty($_FILES['img']['tmp_name'])){
 $table=$_POST['table'];
 $db=${ucfirst($table)};
 
-if($_POST['table'] == 'title'){   
+if($_POST['table']=='title'){
     $_POST['sh']=0;
-    
 }else{
     $_POST['sh']=1;
 }
 
 unset($_POST['table']);
+
 $db->save($_POST);
 
-
-// $Title->save($_POST);
 
 to("../backend.php?do=$table");
 
