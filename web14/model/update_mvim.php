@@ -1,4 +1,4 @@
-<h3 style='text-align:center;'>更新動畫圖片</h3>
+<h3 style='text-align:center;'>更換動畫圖片</h3>
 <hr>
 <form action="./api/update.php" method='post' enctype="multipart/form-data">
     <div>
