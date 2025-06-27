@@ -15,7 +15,7 @@
                 ?>
                     <tr>
                         <td>
-                            <img src="./images/<?= $row['img']; ?>" style="width:120px;">
+                            <img src="./images/<?= $row['img']; ?>" style="width:120px; display:block; margin:auto;">
                         </td>
                         <td>
                             <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? "checked" : ""; ?>>
@@ -24,10 +24,10 @@
                             <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
                         </td>
                         <td>
-                            <input type="button" value="更新動畫" onclick="op('#cover','#cvr','./model/update_mvim.php?id=<?= $row['id']; ?>')">
+                            <input type="button" value="更換動畫" onclick="op('#cover','#cvr','./model/update_mvim.php?id=<?= $row['id']; ?>')">
                         </td>
                     </tr>
-                        <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
+                        <input type="hidden" name="id[]" value="<?= $row['id'];?>">
 
                 <?php
                 endforeach;

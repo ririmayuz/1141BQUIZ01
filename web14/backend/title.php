@@ -16,7 +16,7 @@
                 ?>
                     <tr>
                         <td width="45%">
-                            <img src="./images/<?= $row['img']; ?>" style="width:300px;height=30px;">
+                            <img src="./images/<?= $row['img']; ?>" style="width:300px;height=30px; display:block; margin:auto;">
                         </td>
                         <td width="23%">
                             <input type="text" name="text[]" value="<?= $row['text']; ?>">
@@ -28,7 +28,7 @@
                             <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
                         </td>
                         <td>
-                            <input type="button" value="更新圖片" onclick="op('#cover','#cvr','./model/update_title.php?id=<?= $row['id']; ?>')">
+                            <input type="button" value="更新圖片" onclick="op('#cover','#cvr','./model/<?=$do;?>.php?id=<?= $row['id']; ?>')">
                         </td>
                     </tr>
                         <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
