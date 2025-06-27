@@ -15,19 +15,25 @@ foreach($_POST['id'] as $key => $id){
                 $row['text']=$_POST['text'][$key];
                 $row['sh']=($_POST['sh']==$id)?1:0;
             break;
+
             case "ad":
                 $row['text']=$_POST['text'][$key];
                 $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
             break;
+
             case "mvim":
                 $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
             break;
+
             case "image":
             break;
+
             case "news":
             break;
+
             case "admin":
             break;
+            
             case "menu":
             break;
 

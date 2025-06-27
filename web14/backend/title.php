@@ -16,7 +16,7 @@
                 ?>
                 <tr>
                     <td width="45%">
-                        <img src="./images/<?=$row['img'];?>" style="width:300px;height:30px;">
+                        <img src="./images/<?=$row['img'];?>" style="width:300px; height:30px;display:block; margin:auto;">
                     </td>
                     <td width="23%">
                        <input type="text" name="text[]" value="<?=$row['text'];?>"> 

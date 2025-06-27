@@ -11,9 +11,13 @@ $table=$_POST['table'];
 $db=${ucfirst($table)};
 
 if($_POST['table']=='title'){
+
     $_POST['sh']=0;
+
 }else{
+
     $_POST['sh']=1;
+    
 }
 
 unset($_POST['table']);
