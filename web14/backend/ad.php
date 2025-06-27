@@ -10,7 +10,7 @@
                     
                 </tr>
                 <?php
-                $rows = $Ad->all();
+                $rows = ${ucfirst($do)}->all();
                 foreach ($rows as $row):
                 ?>
                     <tr>
@@ -34,7 +34,7 @@
             <tbody>
                 <tr>
                     <!-- op -->
-                     <input type="hidden" name="table" value="<?= $_GET['table']?>">
+                     <input type="hidden" name="table" value="<?=$do;?>">
                     <td width="200px"><input type="button"
                             onclick="op('#cover','#cvr','./model/<?=$do;?>.php?table=<?=$do;?>')" value="新增動態文字廣告圖片">
                     </td>
