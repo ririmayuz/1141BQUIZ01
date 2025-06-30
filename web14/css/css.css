@@ -124,6 +124,14 @@ body
 {
 	text-align:center;
 }
+.cent a{
+	text-decoration: none;
+	color: blue;
+}
+.cent a:hover{
+	text-decoration: underline;
+}
+
 input,button
 {
 	border:#999 1px solid;

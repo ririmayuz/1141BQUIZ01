@@ -9,13 +9,18 @@
                     <td width="10%">刪除</td>
                 </tr>
                 <?php
-                 $rows=${ucfirst($do)}->all();
+                $all=count(${ucfirst($do)}->all());
+                $div=3;
+                $pages=ceil($all/$div);
+                $now=$_GET['p']??1;
+                $start=($now-1)*$div;
+
+                 $rows=${ucfirst($do)}->all(" limit $start,$div");
                  foreach($rows as $row):
                 ?>
                 <tr>
                     <td>
-                        <textarea name="text[]" style="width:90%;height:60px; display:block; margin:auto;"><?=$row['text'];?></textarea>
-                        <!-- <input type="text" name="text[]" value="<?=$row['text'];?>" style="width:95%; display:block; margin:auto;"> -->
+                        <textarea name="text[]" style="width:95%; height:60px; display:block; margin:auto;"><?=$row['text'];?></textarea>
                     </td>
                     <td>
                         <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?"checked":"";?>>
@@ -30,7 +35,21 @@
                 ?>
             </tbody>
         </table>
+       <div class='cent'>
+                <?php if($now-1>0): ?>
+                 <a href='?do=<?=$do;?>&p=<?=$now-1;?>'>< </a>
+                <?php endif ;?>
+                 
+                <?php for($i=1;$i<=$pages;$i++):
+                     $size=($now==$i)?'24px':''; 
+                ?>
+                 <a href='?do=<?=$do;?>&p=<?=$i;?>' style="font-size:<?=$size;?>"> <?=$i;?> </a>
+                <?php endfor;?>
 
+                <?php if($now+1<=$pages):?>
+                 <a href='?do=<?=$do;?>&p=<?=$now+1;?>'>></a>
+                <?php endif ;?>
+       </div>
         <table style="margin-top:40px; width:70%;">
             <tbody>
                 <tr>
