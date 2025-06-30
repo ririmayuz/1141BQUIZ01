@@ -10,7 +10,7 @@
                 </tr>
                 <?php
                 $all=count(${ucfirst($do)}->all());
-                $div=3;
+                $div=4;
                 $pages=ceil($all/$div);
                 $now=$_GET['p']??1;
                 $start=($now-1)*$div;
@@ -55,8 +55,8 @@
                     <td width="200px"><input type="button"
                             onclick="op('#cover','#cvr','./modal/<?=$do;?>.php?table=<?=$do;?>')"
                             value="新增最新消息資料"></td>
-                    <td class="cent"><input type="submit" value="修改確定"><input
-                            type="reset" value="重置"></td>
+                    <td class="cent"><input type="submit" value="修改確定">
+                    <input type="reset" value="重置"></td>
                 </tr>
             </tbody>
         </table>
