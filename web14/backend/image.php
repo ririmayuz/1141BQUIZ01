@@ -10,8 +10,14 @@
                     <td></td>
                 </tr>
                 <?php
-                 $rows=${ucfirst($do)}->all();
-                 foreach($rows as $row):
+                $all=count(${ucfirst($do)}->all());
+                $div=3;
+                $pages=ceil($all/$div);
+                $now=$_GET['p']??1;
+                $start=($now-1)*$div;
+
+                $rows=${ucfirst($do)}->all("limit $start,$div");
+                foreach($rows as $row):
                 ?>
                 <tr>
                     <td>
