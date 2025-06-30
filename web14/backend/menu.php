@@ -12,7 +12,7 @@
                     <td width="10%"></td>
                 </tr>
                 <?php
-                $rows = ${ucfirst($do)}->all();
+                $rows = ${ucfirst($do)}->all(['main_id'=>0]);
                 foreach ($rows as $row):
                 ?>
                     <tr>
@@ -22,7 +22,9 @@
                         <td>
                             <input type="text" name="href[]" value="<?= $row['href']; ?>" style="width:90%">
                         </td>
-                        <td></td>
+                        <td>
+                            <?=count($Menu->all(['main_id' => $row['id']]));?>
+                        </td>
                         <td>
                             <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
                         </td>
@@ -46,7 +48,7 @@
                     <input type="hidden" name="table" value="<?= $do; ?>">
                     <td width="200px"><input type="button"
                             onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')"
-                            value="編輯次選單"></td>
+                            value="新增主選單"></td>
                     <td class="cent"><input type="submit" value="修改確定"><input
                             type="reset" value="重置"></td>
                 </tr>
