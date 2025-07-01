@@ -12,6 +12,11 @@ $(document).ready(function(e) {
 			$(this).children(".mw").hide()
 		}
 	)
+	$(".mw").hover(
+		function(){
+			$(this).show();
+		}
+	)
 });
 function lo(x)
 {
