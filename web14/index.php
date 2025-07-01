@@ -23,8 +23,8 @@
     </div>
 
     <div id="main">
-        <a title="" href="./home_files/home.htm">
-            <div class="ti" style="background:url('use/'); background-size:cover;"></div>
+        <a title="<?=$Title->find(['sh'=>1])['text'];?>" href="index.php">
+            <div class="ti" style="background:url('images/<?=$Title->find(['sh'=>1])['img'];?>'); background-size:cover;"></div>
             <!--標題-->
         </a>
         <div id="ms">
@@ -46,12 +46,14 @@
                 <script>
                     var lin = new Array();
                     var now = 0;
-                    if (lin.length > 1) {
+                    if (lin.length > 1) 
+                    {
                         setInterval("ww()", 3000);
                         now = 1;
                     }
 
-                    function ww() {
+                    function ww() 
+                    {
                         $("#mwww").html("<embed loop=true src='" + lin[now] + "' style='width:99%; height:100%;'></embed>")
                         //$("#mwww").attr("src",lin[now])
                         now++;
