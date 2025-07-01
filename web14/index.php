@@ -39,7 +39,15 @@
             </div>
             <div class="di"
                 style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
+                <!-- 動畫文字 -->
                 <marquee scrolldelay="120" direction="left" style="position:absolute; width:100%; height:40px;">
+                    <?php 
+					$ads=$Ad->all(['sh'=>1]);
+					foreach($ads as $ad){
+						echo $ad['text'];
+						echo "&nbsp;&nbsp;&nbsp;&nbsp;";
+					}
+					?>  
                 </marquee>
                 <div style="height:32px; display:block;"></div>
                 <!--正中央-->
@@ -142,7 +150,7 @@
                                 $("#ssaa" + t).show()
                             }
                         }
-                        pp(1)
+                        pp(1);
                     </script>
                 </div>
             </div>
